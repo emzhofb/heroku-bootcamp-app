@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Course</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  </head>
+  </head>
+  <body>
+    <!-- memanggil navigation -->
+    <%- include('../partials/navigation') %>
+    <br>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h1>Add Student</h1>
+          <form action="/students/create" method="POST">
+            <div class="form-group">
+              <label>Student Name</label>
+              <input type="text" class="form-control" name="name">
+              <label>Student Course</label>
+              <select name="courseId" class="form-control">
+                <option>Choose Course</option>
+                <% courses.forEach( course => { %>
+                  <option value="<%= course.id %>"><%= course.name %></option>
+                <% }) %>
+              </select>
+              <br>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

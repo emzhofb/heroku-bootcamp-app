@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">  </head>
+  </head>
+  <body>
+    <!-- memanggil navigation -->
+    <%- include('partials/navigation') %>
+    <br>
+    <br>
+    <div class="container">
+      <div class="card">
+        <div class="card-body" style="text-align: center">
+          <h1><%= title %></h1>
+          <h2>Welcome <%= user.username %></h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

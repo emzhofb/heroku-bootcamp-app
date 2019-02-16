@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- memanggil navigation -->
+    <%- include('../partials/navigation') %>
+    <br>
+    <br>
+    <div class="text-center alert alert-secondary container">
+      <h1>Welcome</h1>
+      <a class="btn btn-success" href="/courses/create">Add Course</a>
+      <br>
+      <br>
+      <table class="table table-primary">
+        <thead>
+          <th>Course Name</th>
+          <th>Option</th>
+        </thead>
+        <tbody class="table-success">
+          <!-- courses ini di dapat dari routes, yang telah di passing sebelumnya -->
+          <% courses.forEach( course => { %>
+            <tr>
+              <td><%= course.name %></td>
+              <td>
+                <a class="btn btn-info" style="color: white" href="/courses/edit/<%= course.id %>">Edit</a>
+                <a class="btn btn-danger" style="color: white" href="/courses/delete/<%= course.id %>" onclick="return confirm('Delete kursus?')">Delete</a>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
